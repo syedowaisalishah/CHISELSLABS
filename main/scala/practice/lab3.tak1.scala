@@ -15,19 +15,17 @@ class BranchControl extends Module {
     out:=0.B
     switch(io.fnct3){
         is("b000".U){
-            out:=io.arg_x & io.arg_y}
-        is("b001".U){
-            out:=io.arg_x | io.arg_y}
-        is("b010".U){
-            out:=io.arg_x ^ io.arg_y}
-        is("b011".U){
             out:=io.arg_x === io.arg_y}
-        is("b100".U){
+        is("b001".U){
             out:=io.arg_x =/= io.arg_y}
-        is("b110".U){
+        is("b101".U){
             out:=io.arg_x > io.arg_y}
-        is("b111".U){
+        is("b100".U){
             out:=io.arg_x < io.arg_y}
+        is("b110".U){
+            out:=io.arg_x <= io.arg_y}
+        is("b111".U){
+            out:=io.arg_x >= io.arg_y}
     }
     io.br_taken:=io.branch && out
 }
