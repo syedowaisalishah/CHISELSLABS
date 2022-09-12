@@ -1,4 +1,4 @@
-package lab3
+package practice
 import chisel3 . _
 import chisel3 . util . _
 class LM_IO_Interface_BranchControl extends Bundle {
